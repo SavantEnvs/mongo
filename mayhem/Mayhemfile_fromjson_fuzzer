@@ -1,0 +1,10 @@
+project: savantenvs/mongo
+target: fromjson_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fromjson_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/fromjson_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/src/third_party/json-c/dist/fuzz/tokener_parse_ex_fuzzer.dict
+    timeout: 10

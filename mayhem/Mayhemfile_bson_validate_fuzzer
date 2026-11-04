@@ -1,0 +1,10 @@
+project: savantenvs/mongo
+target: bson_validate_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bson_validate_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/bson_validate_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/src/third_party/protobuf/dist/third_party/utf8_range/fuzz/utf8_fuzzer.dict
+    timeout: 10

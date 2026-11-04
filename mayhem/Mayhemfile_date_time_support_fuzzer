@@ -1,0 +1,9 @@
+project: savantenvs/mongo
+target: date_time_support_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/date_time_support_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/date_time_support_fuzzer
+    libfuzzer: true
+    timeout: 10
